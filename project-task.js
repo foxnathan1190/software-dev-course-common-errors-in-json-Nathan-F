@@ -44,31 +44,30 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+const invalidBookingJSON = //no need for tics or const
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15", //needs comma
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson", //name needed ""
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": null, //can't use undefines, must use null
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"] //no trailing comma
   }
 }
-`;
-
+//no ; at end
 
 // ============================================
 // ✅ Requirements
@@ -91,11 +90,12 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
-
+    Reviewed looking for specific mistakes for JSON
 2️⃣ How did you confirm that your corrected JSON file was valid?
-
+    Used jsonlint.com to validate
 3️⃣ Which errors were the most difficult to spot? Why?
-
+    They were all pretty easy since the rules are so strict.
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+    linters are nice for validating.
 */
